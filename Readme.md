@@ -4,7 +4,7 @@
 [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Максим Бабенко](https://htmlacademy.ru/profile/id39987).
-* Наставник: Михаил Баранов.
+* Наставник: [Михаил Баранов](https://htmlacademy.ru/profile/id14760).
 
 ### Немного о себе
 
