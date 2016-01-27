@@ -419,7 +419,7 @@
       this.ctx.fillRect(bGroundPosX, bGroundPosY, bGroundWidth, bGroundHeight);
 
       var count = 0;
-      for(var key in lineStorage) {
+      for (var key in lineStorage) {
         this.ctx.shadowOffsetX = 0;
         this.ctx.shadowOffsetY = 0;
         this.ctx.textBaseline = 'hanging';
