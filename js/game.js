@@ -419,12 +419,12 @@
       this.ctx.fillRect(bGroundPosX, bGroundPosY, bGroundWidth, bGroundHeight);
 
       var count = 0;
-      for (var i = 1; i <= Object.keys(lineStorage).length; i++) {
+      for (var j = 1; j <= Object.keys(lineStorage).length; j++) {
         this.ctx.shadowOffsetX = 0;
         this.ctx.shadowOffsetY = 0;
         this.ctx.textBaseline = 'hanging';
         this.ctx.fillStyle = 'black';
-        this.ctx.fillText(lineStorage['line' + i], textPosX, textPosY + (fontSize * lineSpacing * count));
+        this.ctx.fillText(lineStorage['line' + j], textPosX, textPosY + (fontSize * lineSpacing * count));
         count++;
       }
     },
