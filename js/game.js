@@ -378,6 +378,7 @@
      * Вывод сообщения на экран паузы.
      */
     showMessage: function(message, messageWidth) {
+      messageWidth = messageWidth || 200;
       var words = message.split(' ');
       var countWords = words.length;
       var line = '';
@@ -435,16 +436,16 @@
     _drawPauseScreen: function() {
       switch (this.state.currentStatus) {
         case Verdict.WIN:
-          this.showMessage('You have won!');
+          this.showMessage('You have won!', 200);
           break;
         case Verdict.FAIL:
-          this.showMessage('You have failed!');
+          this.showMessage('You have failed!', 200);
           break;
         case Verdict.PAUSE:
-          this.showMessage('Game is on pause!');
+          this.showMessage('Game is on pause!', 200);
           break;
         case Verdict.INTRO:
-          this.showMessage('Welcome to the game! Press Space to start', 200);
+          this.showMessage('Welcome to the game! Press Space to start');
           break;
       }
     },
