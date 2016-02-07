@@ -60,13 +60,13 @@
 </main>
 
 <div class="overlay-container invisible">
-  <form class="overlay review-form" action="index.html" method="post">
+  <form class="overlay review-form" action="index.html" method="post" id="form-review">
     <h2 class="review-form-title">Оставить отзыв</h2>
     <span class="review-form-close">&times;</span>
 
-    <fieldset class="review-form-group review-form-group-mark">
+    <fieldset class="review-form-group review-form-group-mark" id="marks">
       <span class="review-form-label">Оценка</span><br>
-      <input type="radio" name="review-mark" id="review-mark-1" value="1"><label class="review-mark-label review-mark-label-1" for="review-mark-2">1</label>
+      <input type="radio" name="review-mark" id="review-mark-1" value="1"><label class="review-mark-label review-mark-label-1" for="review-mark-1">1</label>
       <input type="radio" name="review-mark" id="review-mark-2" value="2"><label class="review-mark-label review-mark-label-2" for="review-mark-2">2</label>
       <input type="radio" name="review-mark" id="review-mark-3" value="3" checked><label class="review-mark-label review-mark-label-3" for="review-mark-3">3</label>
       <input type="radio" name="review-mark" id="review-mark-4" value="4"><label class="review-mark-label review-mark-label-4" for="review-mark-4">4</label>
@@ -75,7 +75,7 @@
 
     <fieldset class="review-form-group">
       <label for="review-name" class="review-form-label">Имя</label><br>
-      <input type="text" name="review-name" id="review-name" class="review-form-field review-form-field-name">
+      <input type="text" name="review-name" id="review-name" class="review-form-field review-form-field-name" required>
     </fieldset>
 
     <fieldset class="review-form-group">
@@ -85,10 +85,10 @@
 
     <div class="review-form-controls">
       <button class="review-form-control review-submit" type="submit">Добавить отзыв</button>
-      <div class="review-form-control review-fields">
+      <div class="review-form-control review-fields" id="hints">
         Осталось заполнить:<br>
-        <label for="review-name" class="review-fields-label review-fields-name">имя</label>
-        <label for="review-text" class="review-fields-label review-fields-text">отзыв</label>
+        <label for="review-name" class="review-fields-label review-fields-name" id="hint-required-name-field">имя</label>
+        <label for="review-text" class="review-fields-label review-fields-text invisible" id="hint-required-review-field">отзыв</label>
       </div>
     </div>
   </form>
