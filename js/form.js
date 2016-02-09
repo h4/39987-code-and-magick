@@ -1,5 +1,7 @@
 'use strict';
 
+/* global docCookies: true */
+
 (function() {
   var formContainer = document.querySelector('.overlay-container');
   var formOpenButton = document.querySelector('.reviews-controls-new');
@@ -15,15 +17,15 @@
     formContainer.classList.add('invisible');
   };
 
-  var formReviewElement = document.forms['form-review'];
-  var marks = formReviewElement['marks'];
-  var mark1 = formReviewElement['review-mark-1'];
-  var mark2 = formReviewElement['review-mark-2'];
-  var name = formReviewElement['review-name'];
-  var review = formReviewElement['review-text'];
-  var hints = document.querySelector('#hints');
-  var nameHint = document.querySelector('#hint-required-name-field');
-  var reviewHint = document.querySelector('#hint-required-review-field');
+  var formReviewElement = document.querySelector('.review-form');
+  var marks = formReviewElement.querySelector('.review-form-group-mark');
+  var mark1 = formReviewElement.querySelector('input[type="radio"][value="1"]');
+  var mark2 = formReviewElement.querySelector('input[type="radio"][value="2"]');
+  var name = formReviewElement.querySelector('.review-form-field-name');
+  var review = formReviewElement.querySelector('.review-form-field-text');
+  var hints = formReviewElement.querySelector('.review-fields');
+  var nameHint = formReviewElement.querySelector('.review-fields-name');
+  var reviewHint = formReviewElement.querySelector('.review-fields-text');
   var submitButton = formReviewElement.querySelector('button');
 
   name.value = docCookies.getItem('name');
@@ -62,14 +64,14 @@
 
   function checkMarksValue() {
     if (mark1.checked || mark2.checked) {
-      review.setAttribute('required', true);
+      review.setAttribute('required', 'true');
       if (review.value === null || review.value === '') {
         reviewHint.classList.remove('invisible');
       } else {
         reviewHint.classList.add('invisible');
       }
     } else {
-      review.removeAttribute('required', true);
+      review.removeAttribute('required');
       reviewHint.classList.add('invisible');
     }
 
@@ -104,8 +106,8 @@
   function formIsValid() {
     var isValid = true;
 
-    for (var i = 0; i < document.forms['form-review'].elements.length; i++) {
-      isValid = document.forms['form-review'].elements[i].validity.valid;
+    for (var i = 0; i < formReviewElement.elements.length; i++) {
+      isValid = formReviewElement.elements[i].validity.valid;
       if (!isValid) {
         break;
       }
@@ -124,7 +126,7 @@
 
   function getMark() {
     for (var i = 1; i < 6; i++) {
-      if(formReviewElement['review-mark-' + i].checked) {
+      if (formReviewElement['review-mark-' + i].checked) {
         return i;
       }
     }
