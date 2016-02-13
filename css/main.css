@@ -266,11 +266,13 @@ input[type=radio]:checked + .reviews-filter-item {
 }
 
 .review-rating {
-  display: block;
-  width: 30px;
-  height: 30px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 20px;
+  height: 20px;
 
   background: url("../img/icon-star.png") top left repeat-x;
+  background-size: 20px;
 }
 
 
@@ -298,10 +300,15 @@ input[type=radio]:checked + .reviews-filter-item {
   border-radius: 50%;
 }
 
-.review-quiz {
+.review-quiz,
+.review-date {
   font-size: 15px;
   color: #ffffff;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.review-date {
+  float: right;
 }
 
 .review-quiz-answer {
