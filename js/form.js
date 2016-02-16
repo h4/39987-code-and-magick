@@ -32,11 +32,11 @@
     checkMarksValue();
   };
 
-  name.onchange = function() {
+  name.oninput = function() {
     checkNameValue();
   };
 
-  review.onchange = function() {
+  review.oninput = function() {
     checkReviewValue();
   };
 
