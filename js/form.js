@@ -1,6 +1,6 @@
-'use strict';
-
 /* global docCookies: true */
+
+'use strict';
 
 (function() {
   var formContainer = document.querySelector('.overlay-container');
@@ -28,8 +28,11 @@
   var reviewHint = formReviewElement.querySelector('.review-fields-text');
   var submitButton = formReviewElement.querySelector('button');
 
-  name.value = docCookies.getItem('name');
-  formReviewElement['review-mark-' + docCookies.getItem('mark')].checked = true;
+  name.value = docCookies.getItem('name') || null;
+
+  if (docCookies.getItem('mark')) {
+    formReviewElement['review-mark-' + docCookies.getItem('mark')].checked = true;
+  }
 
   checkMarksValue();
   checkNameValue();
@@ -40,11 +43,11 @@
     checkMarksValue();
   };
 
-  name.onchange = function() {
+  name.oninput = function() {
     checkNameValue();
   };
 
-  review.onchange = function() {
+  review.oninput = function() {
     checkReviewValue();
   };
 
